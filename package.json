@@ -1,0 +1,22 @@
+{
+  "name": "express-learn",
+  "version": "1.0.0",
+  "description": "node 学习笔记",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duguangye/learning-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duguangye/learning-node/issues"
+  },
+  "homepage": "https://github.com/duguangye/learning-node#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

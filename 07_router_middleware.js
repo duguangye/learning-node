@@ -7,7 +7,7 @@ const app = express()
 const fs = require(fs)
 const path = require('path')
 
-// 声明中间件函数
+// 路由中间件
 function recordMiddleware(req,res,next){
     let { url, ip } = req
     /*  */
@@ -15,9 +15,8 @@ function recordMiddleware(req,res,next){
     next()
 }
 
-app.use(recordMiddleware)
-
-app.get('/home', (req, res) => {
+// 局部的中间件 只有指定的可以用
+app.get('/home',recordMiddleware ,(req, res) => {
   
     res.send('前台页面')
     // res.status(500).set('aaa','bbb').send('这是ok的')

@@ -1,4 +1,4 @@
-// 记录每个请求的url
+// 处理静态资源的中间件 比如静态资源目录// 记录每个请求的url
 // 1. 导入 express
 const express = require('express')
 
@@ -7,17 +7,13 @@ const app = express()
 const fs = require(fs)
 const path = require('path')
 
-// 声明中间件函数
-function recordMiddleware(req,res,next){
-    let { url, ip } = req
-    /*  */
-    fs.appendFileSync(path.resolve(__dirname, './access.log'), `${url} ${ip}\r\n`)
-    next()
-}
+// 静态资源中间件的设置
+app.use(express.static(__dirname+'/public')) 
+// 根路径默认访问 index.html网页  2.谁想匹配到谁想处理 3.静态资源中间件通常处理静态资源,路由处理动态资源
 
-app.use(recordMiddleware)
-
-app.get('/home', (req, res) => {
+// fangwe
+// 局部的中间件 只有指定的可以用
+app.get('/home' ,(req, res) => {
   
     res.send('前台页面')
     // res.status(500).set('aaa','bbb').send('这是ok的')

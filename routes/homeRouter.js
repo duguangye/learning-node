@@ -7,7 +7,7 @@ const router = express.Router()
 router.get('/login', (req, res) => {
     // 相应HTML内容
     // res.send('表单页面')
-    res.sendFile(__dirname + '/02_form.html')
+    res.sendFile(__dirname + '../02_form.html')
 
 })
 
